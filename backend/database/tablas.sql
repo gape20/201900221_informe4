@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS INFORME4;
-Create table Usuario(
+Create table usuario(
 idUsuario int,
 nombre varchar(30),
 apellido varchar(30),

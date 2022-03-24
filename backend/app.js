@@ -21,8 +21,11 @@ app.use(function(req, res, next) {
 
 //Cargando rutas
 const CatedraticoRuta = require("./rutas/catedratico.ruta");
+const UsuarioRuta = require("./rutas/usuario.ruta");
+
 //Rutas Base
-app.use("/api/", CatedraticoRuta)
+app.use("/api/", CatedraticoRuta);
+app.use("/api/", UsuarioRuta);
 
 //Iniciar Puerto
 app.listen(port);
