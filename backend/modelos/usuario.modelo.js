@@ -42,4 +42,32 @@ usuario.create = function(data, callback) {
         });
     }
 }
+
+//Editar un elemento
+usuario.edit = function(data, callback) {
+    if (db) {
+        var consulta = "call sp_EditarUsuario(?,?,?,?,?)"
+        db.query(consulta, [data.idUsuario, data.nombre, data.apellido, data.contraseña, data.correo], function(error, resultado) {
+            if (error) {
+                throw error;
+            } else {
+                callback(resultado);
+            }
+        })
+    }
+}
+
+//Eliminar un elemento
+usuario.delete = function(id, callback) {
+    if (db) {
+        var consulta = "call sp_EliminarUsuario(?)"
+        db.query(consulta, id, function(error, resultado) {
+            if (error) {
+                throw error;
+            } else {
+                callback(resultado);
+            }
+        })
+    }
+}
 module.exports = usuario;

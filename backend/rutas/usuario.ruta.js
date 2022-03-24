@@ -1,7 +1,7 @@
 var express = require('express');
-const usuario = require('../modelos/usuario.modelo').default;
-const Usuario = require('../modelos/usuario.modelo').default;
-var UsuarioModelo = require('../modelos/usuario.modelo').default
+const usuario = require('../modelos/usuario.modelo');
+const Usuario = require('../modelos/usuario.modelo');
+var UsuarioModelo = require('../modelos/usuario.modelo');
 var UsuarioRuta = express.Router();
 
 //Obteniendo todos los elementos
@@ -41,6 +41,36 @@ UsuarioRuta.post('/usuario', function(req, res) {
             res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
         }
     });
+});
+
+// Editar un nuevo elemento 
+UsuarioRuta.put('/usuario/:idUsuario', function(req, res) {
+    var NoUsuario = req.params.idUsuario;
+    var data = req.body;
+
+    if (NoUsuario == data.idUsuario) {
+        UsuarioModelo.edit(data, function(resultado) {
+            if (resultado.affectedRows > 0) {
+                res.json(resultado);
+            } else {
+                res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
+            }
+        });
+    } else {
+        res.json({ 'Mensaje': 'No son el mismo id' });
+    }
+});
+
+// Eliminar un elemento
+UsuarioRuta.delete('/usuario/:idUsuario', function(req, res) {
+    var NoUsuario = req.params.idUsuario;
+    UsuarioModelo.delete(NoUsuario, function(resultado) {
+        if (resultado.affectedRows > 0) {
+            res.json(resultado);
+        } else {
+            res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
+        }
+    })
 });
 
 module.exports = UsuarioRuta
