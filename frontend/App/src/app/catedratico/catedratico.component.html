@@ -4,7 +4,7 @@
 <head>
     <meta charset='UTF-8'>
 
-    <title>curso</title>
+    <title>catedratico</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -87,23 +87,26 @@
 <body>
     <div id="page-wrap">
         <div class="main-block">
-            <h1>Crear Curso</h1>
+            <h1>Crear Catedrático</h1>
             <form action="/">
                 <hr>
                 <div class="account-type">
                 </div>
                 <hr>
                 <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
-                <input type="text" name="idCurso" id="idCurso" [(ngModel)]="Curso.idCurso" placeholder="ID Curso" required/>
+                <input type="text" name="name" id="idCatedratico" placeholder="ID Catedrático" required/>
 
                 <label id="icon" for="name"><i class="fas fa-user"></i></label>
-                <input type="text" name="nombre" id="nombreCurso" [(ngModel)]="Curso.nombre" placeholder="Nombre Curso" required/>
+                <input type="text" name="name" id="nombreCatedratico" placeholder="Nombre Catedrático" required/>
+
+                <label id="icon" for="name"><i class="fas fa-user"></i></label>
+                <input type="text" name="name" id="idCurso" placeholder="ID Curso" required/>
                 <hr>
 
                 <hr>
                 <div class="btn-block">
 
-                    <button type="submit" id="crearCurso" (click)="AgregarCurso()">Crear</button>
+                    <button type="submit" href="" id="crearCurso">Crear</button>
                 </div>
             </form>
         </div>
@@ -113,48 +116,56 @@
         <br>
 
         <div class="editar">
-            <form>
-                <h1>Editar curso:</h1>
-                <select name="opcion" class="form-control " [(ngModel)]="Curso.idCurso ">
-                    <option *ngFor="let cursos of listaCursos " value="cursos.idCurso ">{{cursos.idCurso}}, {{cursos.nombre}}</option>
-                </select>
-                <br>
-                <br>
-                <input type="text " id="NombreNuevo " name="name " required minlength="4 " [(ngModel)]="Curso.nombre " placeholder="Nombre nuevo ">
-                <br>
-
-                <div class="btn-block ">
-
-                    <button type="submit " id="EditarCurso " (click)="EditarCurso()">Editar</button>
-                </div>
-            </form>
-        </div>
-
-        <div class="editar">
-            <h1>Eliminar curso:</h1>
-            <select class="form-control ">
-                <option *ngFor="let cursos of listaCursos " value="cursos.idCurso ">{{cursos.idCurso}}, {{cursos.nombre}}</option>
-            </select>
-
+            <h1>Editar Catedratico</h1>
+            <input type="text" id="idCat" name="name" required minlength="4" placeholder="ID Catedratico">
             <br>
-            <div class="btn-block ">
-                <button type="submit " id="delete ">Eliminar</button>
+
+            <input type="text" id="NombreNuevo" name="name" required minlength="4" placeholder="Nombre nuevo">
+            <br>
+            <input type="text" id="idCu" name="name" required minlength="4" placeholder="ID Curso">
+            <br>
+            <div class="btn-block">
+
+                <button type="submit" href="" id="EditarCatedratico">Editar</button>
             </div>
         </div>
-        <div class="actu ">
-            <button type="submit " id="actu " (click)="ObtenerCursos() ">Actualizar</button>
+        <div class="editar">
+            <h1>Eliminar Catedratico</h1>
+            <input type="text" id="idCat" name="name" required minlength="4" placeholder="ID Catedratico">
+            <br>
+            <div class="btn-block">
+
+                <button type="submit" href="" id="delete">Eliminar</button>
+            </div>
+        </div>
+        <div class="actu">
+            <button type="submit" href="" id="actu">Actualizar</button>
         </div>
         <table>
             <thead>
                 <tr>
+                    <th>ID Catedrático</th>
+                    <th>Nombre</th>
                     <th>ID Curso</th>
-                    <th>Nombre del Curso</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let cursos of listaCursos ">
-                    <th scope="row ">{{cursos.idCurso}} </th>
-                    <td>{{cursos.nombre}}</td>
+                <tr>
+
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+
+
+                </tr>
+                <tr>
+
+
+                </tr>
+                <tr>
+
                 </tr>
             </tbody>
         </table>

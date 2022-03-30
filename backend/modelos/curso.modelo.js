@@ -58,10 +58,10 @@ curso.edit = function(data, callback) {
 }
 
 //Eliminar un elemento
-curso.delete = function(id, callback) {
+curso.delete = function(data, callback) {
     if (db) {
         var consulta = "call sp_EliminarCurso(?)"
-        db.query(consulta, id, function(error, resultado) {
+        db.query(consulta, data.idCurso, function(error, resultado) {
             if (error) {
                 throw error;
             } else {

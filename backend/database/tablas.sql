@@ -185,3 +185,9 @@ BEGIN
 	DELETE FROM usuario WHERE idUsuario = _idUsuario;
     END$$
 DELIMITER ;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_EliminarCurso`(IN `_idCurso` INT)
+BEGIN
+	DELETE FROM curso WHERE idCurso = _idCurso;
+    END$$
+DELIMITER ;

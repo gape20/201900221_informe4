@@ -44,23 +44,27 @@ CursoRuta.post('/curso', function(req, res) {
 });
 
 // Editar un nuevo elemento 
-CursoRuta.put('/curso/:idCurso', function(req, res) {
-    var noCurso = req.params.idCurso;
+CursoRuta.put('/curso', function(req, res) {
     var data = req.body;
-
-    if (noCurso == data.idCurso) {
-        CursoModelo.edit(data, function(resultado) {
-            if (resultado.affectedRows > 0) {
-                res.json(resultado);
-            } else {
-                res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
-            }
-        });
-    } else {
-        res.json({ 'Mensaje': 'No son el mismo id' });
-    }
+    CursoModelo.edit(data, function(resultado) {
+        if (resultado.affectedRows > 0) {
+            res.json(resultado);
+        } else {
+            res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
+        }
+    });
 });
 
 
+CursoRuta.delete('/curso', function(req, res) {
+    var noCurso = req.body;
+    CursoModelo.delete(noCurso, function(resultado) {
+        if (resultado.affectedRows > 0) {
+            res.json(resultado);
+        } else {
+            res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
+        }
+    })
+});
 
 module.exports = CursoRuta
