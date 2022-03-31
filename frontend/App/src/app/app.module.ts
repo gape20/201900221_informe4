@@ -8,14 +8,16 @@ import { LoginComponent } from './login/login.component';
 import { CatedraticoComponent } from './catedratico/catedratico.component';
 import { PublicacionComponent } from './publicacion/publicacion.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
+import { RegistrarComponent } from './registrar/registrar.component'
 @NgModule({
   declarations: [
     AppComponent,
     CursoComponent,
     LoginComponent,
     CatedraticoComponent,
-    PublicacionComponent
+    PublicacionComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,

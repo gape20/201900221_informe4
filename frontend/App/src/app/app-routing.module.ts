@@ -4,6 +4,7 @@ import { CatedraticoComponent } from './catedratico/catedratico.component';
 import { CursoComponent } from './curso/curso.component';
 import { LoginComponent } from './login/login.component';
 import { PublicacionComponent } from './publicacion/publicacion.component';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'publicacion', component: PublicacionComponent
+  },
+  {
+    path: 'registrar', component: RegistrarComponent
   }
 ];
 
