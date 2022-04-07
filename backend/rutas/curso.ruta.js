@@ -31,6 +31,18 @@ CursoRuta.get('/curso/:idCurso', function(req, res) {
     });
 });
 
+// Eliminar un  elemento 
+CursoRuta.delete('/curso/:idCurso', function(req, res) {
+    var noCurso = req.params.idCurso;
+    CursoModelo.delete(noCurso, function(resultado) {
+        if (resultado.affectedRows > 0) {
+            res.json(resultado);
+        } else {
+            res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
+        }
+    })
+});
+
 // Crear un nuevo elemento 
 CursoRuta.post('/curso', function(req, res) {
     var data = req.body;
@@ -56,15 +68,5 @@ CursoRuta.put('/curso', function(req, res) {
 });
 
 
-CursoRuta.delete('/curso', function(req, res) {
-    var noCurso = req.body;
-    CursoModelo.delete(noCurso, function(resultado) {
-        if (resultado.affectedRows > 0) {
-            res.json(resultado);
-        } else {
-            res.json({ 'Mensaje': 'No se pudo realizar esta acción' });
-        }
-    })
-});
 
 module.exports = CursoRuta

@@ -87,52 +87,23 @@
 <body>
     <div id="page-wrap">
         <div class="main-block">
-            <h1>Crear Curso</h1>
+            <h1>Editar Curso</h1>
             <form action="/">
                 <hr>
                 <div class="account-type">
                 </div>
                 <hr>
                 <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
-                <input type="text" name="idCurso" id="idCurso" [(ngModel)]="Curso.idCurso" placeholder="ID Curso" required/>
+                <input type="text" name="idCurso" [(ngModel)]="Curso.idCurso" id="idCurso" [readonly]=true required/>
 
                 <label id="icon" for="name"><i class="fas fa-user"></i></label>
-                <input type="text" name="nombre" id="nombreCurso" [(ngModel)]="Curso.nombre" placeholder="Nombre Curso" required/>
+                <input type="text" name="nombre" id="nombreCurso" [(ngModel)]="Curso.nombre" placeholder="Nombre nuevo" required/>
                 <hr>
 
                 <hr>
                 <div class="btn-block">
 
-                    <button type="submit" id="crearCurso" (click)="AgregarCurso()">Crear</button>
+                    <button type="submit" id="crearCurso" (click)="EditarCurso()">Editar</button>
                 </div>
             </form>
         </div>
-
-        <br>
-        <br>
-        <br>
-
-
-        <table>
-            <thead>
-                <tr>
-                    <th>ID Curso</th>
-                    <th>Nombre del Curso</th>
-                    <th>Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let cursos of listaCursos ">
-                    <th scope="row ">{{cursos.idCurso}} </th>
-                    <td>{{cursos.nombre}}</td>
-                    <td><button (click)="BorrarCurso(cursos.idCurso)">borrar</button>
-                        <button [routerLink]="['/editar', cursos.idCurso]">Editar </button></td>
-                </tr>
-            </tbody>
-        </table>
-
-    </div>
-
-</body>
-
-</html>

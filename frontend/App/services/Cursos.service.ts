@@ -19,8 +19,8 @@ export class cursosService{
     getCursos() {
         return this._http.get(this.url+`/curso`);
       }
-    deleteCursos(deleteCursos: cursos) {
-        return this._http.delete(this.url+ `/curso`, );
+    deleteCursos(idCurso: string) {
+        return this._http.delete(this.url+ `/curso/${idCurso}`);
         }
     crearCurso (curso: cursos) {
         return this._http.post(this.url+`/curso`,curso);
@@ -28,5 +28,8 @@ export class cursosService{
     updateCurso(updateCurso: cursos): Observable<cursos>{
         return this._http.put(this.url+ `/curso`, updateCurso);
       }
+    getCurso(idCurso: string){
+      return this._http.get(this.url+`/curso/${idCurso}`);
+    }
                      
 }

@@ -10,7 +10,9 @@ import { PublicacionComponent } from './publicacion/publicacion.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { RegistrarComponent } from './registrar/registrar.component';
-import { MainComponent } from './main/main.component'
+import { MainComponent } from './main/main.component';
+
+import { EditarComponent } from './editar/editar.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,8 @@ import { MainComponent } from './main/main.component'
     CatedraticoComponent,
     PublicacionComponent,
     RegistrarComponent,
-    MainComponent
+    MainComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,

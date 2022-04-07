@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CatedraticoComponent } from './catedratico/catedratico.component';
 import { CursoComponent } from './curso/curso.component';
+import { EditarComponent } from './editar/editar.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { PublicacionComponent } from './publicacion/publicacion.component';
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {
     path: 'main', component: MainComponent
+  },
+  {
+    path: 'editar/:id', component: EditarComponent
   }
 ];
 

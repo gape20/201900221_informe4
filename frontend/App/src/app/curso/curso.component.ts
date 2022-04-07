@@ -14,9 +14,11 @@ export class CursoComponent implements OnInit {
     idCurso: 0,
     nombre:''
   };
+
   constructor(private cursoService: cursosService) {
     
    }
+
 
   ngOnInit() {
 
@@ -31,6 +33,7 @@ export class CursoComponent implements OnInit {
     .subscribe(
       res =>{
         console.log(res)
+        this.ObtenerCursos()
       },
      err => console.error(err)
     )
@@ -43,24 +46,18 @@ export class CursoComponent implements OnInit {
      err => console.error(err)
     )
   }
-  EditarCurso(){
-    this.cursoService.updateCurso(this.Curso)
+  
+  BorrarCurso(id: string){
+    console.log(id)
+    this.cursoService.deleteCursos(id)
     .subscribe(
       res =>{
         console.log(res)
+        this.ObtenerCursos()
       },
      err => console.error(err)
     )
   }
-  BorrarCurso(){
-    this.cursoService.deleteCursos(this.Curso)
-    .subscribe(
-      res =>{
-        console.log(res)
-      },
-     err => console.error(err)
-    )
-  }
-  }
+}
 
 
